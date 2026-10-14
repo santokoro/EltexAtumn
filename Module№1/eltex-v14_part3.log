@@ -1,0 +1,28 @@
+mkdir -p D1/D2/D3
+ls -R D1
+touch D1/D2/file.txt
+ls -l D1/D2
+cat D1/D2/file.txt
+echo "Hello, world!" >> D1/D2/file.txt
+ln D1/D2/file.txt D1/D2/D3/file_hard.txt
+ln -s ../file.txt D1/D2/D3/file_sym.txt
+ls -li D1/D2 D1/D2/D3
+ls -i D1/D2/file.txt D1/D2/D3/file_hard.txt
+ls -l D1/D2/file.txt D1/D2/D3/file_hard.txt
+mv D1/D2/file.txt D1/
+ls -l D1 D1/D2 D1/D2/D3
+cat D1/D2/D3/file_hard.txt
+cat D1/D2/D3/file_sym.txt
+rm -r D1/D2
+ls -lR D1
+find / -type f -size +20M 2>/dev/null
+find / -type f -size +20M 2>/dev/null > "${USER}_part3_gt20M.log"
+xargs -a "${USER}_part3_gt20M.log" du -h
+find ~ -type f -mtime -1
+find ~ -type f -mtime -1 -printf "%TY-%Tm-%Td %TH:%TM  %10s  %p\n"
+which find
+type find
+whereis find
+file /usr/bin/find
+file ~/eltex-pg1-v14_part3.log
+file /boot/initrd.img*
